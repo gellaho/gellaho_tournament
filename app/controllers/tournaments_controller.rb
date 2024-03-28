@@ -4,7 +4,7 @@ class TournamentsController < ApplicationController
   http_basic_authenticate_with(
     name: ENV.fetch('BASIC_AUTH_USER', "test") || Rails.application.credentials[:basic_auth_user],
     password: ENV.fetch('BASIC_AUTH_PASSWORD', "test") || Rails.application.credentials[:basic_auth_password],
-    except: %i[show]
+    except: %i[show index]
   )
   layout 'tournament', except: %i[new index]
 

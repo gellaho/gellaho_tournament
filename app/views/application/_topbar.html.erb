@@ -14,8 +14,8 @@
     <%= button_tag(type: "button", class: "flex md:hidden", "x-on:click" => "mobileNav = !mobileNav") do %>
       <%= icon(:bars_3) %>
     <% end %>
-    <%= vite_image_tag('images/favicons/profile.png', class: 'h-8') %>
-    <%= link_to('gellaho', root_path, class: "text-emerald-600 font-medium font-moms-typewriter") %>
+    <%# vite_image_tag('images/favicons/profile.png', class: 'h-8') %>
+    <%= link_to('Gellaho Tournaments', root_path, class: "text-emerald-600 font-medium") %>
     <div class="hidden md:flex flex-row gap-2 items-center">
       <%= render("topbar_links") %>
     </div>

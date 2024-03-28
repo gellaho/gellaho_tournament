@@ -1,6 +1,6 @@
 # Readme
 
-This project will display the results of a tournament with images along with commentary.
+This project is used to show fans who has won in a fan image contest. Each image faces each other in a tournament, and the website shows the results along with optional commentary.
 
 ## Setup
 
@@ -86,14 +86,13 @@ Upload a `.zip` file containing one `.json` file of the following format and a b
 
 All `"commentators"` and `"commentary"` fields are optional.
 
-
-
-
 The `tournament_id`s are used to identify which entrants/commentators are in each match. This is so you don't have to type out the names every single time. These will not be used in the databse anywhere, it's just used for identification in the importer (See `app/services/TournamentImporter.rb`).
 
-### Example Images
+## Example Image 1
 
 ![image](https://github.com/gellaho/gellaho_tournament/assets/3290267/d4a74e68-7b73-4327-a291-c0c379b7b44e)
+
+## Example Image 2
 
 ![image](https://github.com/gellaho/gellaho_tournament/assets/3290267/5ff18c08-857d-4117-a217-c6699c6d15d9)
 

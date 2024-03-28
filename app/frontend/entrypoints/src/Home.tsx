@@ -5,5 +5,5 @@ export type HomeProps = {
 }
 
 export default function Home(props: HomeProps) {
-  return <p>Hello</p>
+  return <a className="text-blue-700" href="/tournaments">See Tournaments</a>
 }

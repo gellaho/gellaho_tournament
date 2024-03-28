@@ -1,3 +1,4 @@
 <%= render("dropdown", button_text: 'Tournaments') do %>
+  <%= link_to('All Tournaments', tournaments_path) %>
   <%= link_to('New Tournament', new_tournament_path) %>
 <% end %>
