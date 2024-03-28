@@ -1,0 +1,11 @@
+<section class="flex flex-col gap-8">
+  <div class="md:grid md:grid-cols-[2fr_min-content_2fr] flex flex-col">
+    <%= render(match.entrants.first, match:) %>
+    <div class="place-self-center p-4 shrink"><h1 class="text-4xl font-moms-typewriter">VS.</h1></div>
+    <%= render(match.entrants.second || Tournament::Entrant.new(name: "[Withdrawn]"), match:) %>
+  </div>
+
+  <div class="flex flex-col gap-3">
+    <%= render(match.commentaries) %>
+  </div>
+</section>

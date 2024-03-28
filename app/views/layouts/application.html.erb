@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : 'gellaho | Tournament' %></title>
+    <%= render("layouts/meta") %>
+    <%= vite_client_tag %>
+    <%= vite_react_refresh_tag %>
+    <%= vite_stylesheet_tag("application.tailwind.css") %>
+    <%= vite_typescript_tag('application') %>
+    <%= vite_typescript_tag('alpine') %>
+  </head>
+
+  <body>
+    <div class="w-screen" x-data="{ mobileNav: false }">
+      <%= render('topbar') %>
+      <main class="flex flex-col px-8 md:px-32 py-4 md:py-8">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </main>
+    </div>
+  </body>
+</html>

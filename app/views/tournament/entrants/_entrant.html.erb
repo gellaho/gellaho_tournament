@@ -1,0 +1,5 @@
+<%- if entrant.won?(match) %>
+  <%= render('tournament/entrants/winner', entrant: entrant) %>
+<%- else %>
+  <%= render('tournament/entrants/loser', entrant: entrant) %>
+<%- end %>

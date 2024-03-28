@@ -1,0 +1,8 @@
+<%- commentator = commentary.commentator %>
+<div class="flex flex-row gap-2">
+  <%= image_tag(commentator.image, class: "h-10 w-10") %>
+  <p>
+    <strong><%= commentator.name %>:</strong>
+    <%= commentary.text %>
+  </p>
+</div>

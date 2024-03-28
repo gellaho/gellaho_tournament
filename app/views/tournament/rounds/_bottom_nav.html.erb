@@ -1,0 +1,38 @@
+<nav class="flex flex-row gap-2 items-center leading-none">
+  <% if round && round != tournament.rounds.round_order.first %>
+    <%= link_nav(tournament_round_path(tournament, round.previous)) do %>
+      <span class="flex flex-row items-center">
+        <%= icon("chevron_double_left") %>
+        Previous
+      </span>
+    <% end %>
+  <% elsif round && tournament.commentaries.any? %>
+    <%= link_nav(tournament) do %>
+      <span class="flex flex-row items-center">
+        <%= icon("chevron_double_left") %>
+        Previous
+      </span>
+    <% end %>
+  <% end %>
+  <% if tournament.commentaries.any? %>
+    <%= link_nav(tournament, 'Introduction') %>
+  <% end %>
+  <% tournament.rounds.each do |round| %>
+    <%= link_nav(tournament_round_path(tournament, round), round.name) %>
+  <% end %>
+  <% if current_page?(tournament) %>
+    <%= link_nav(tournament_round_path(tournament, tournament.rounds.round_order.first)) do %>
+      <span class="flex flex-row items-center">
+        Next
+        <%= icon("chevron_double_right") %>
+      </span>
+    <% end %>
+  <% elsif round && round != tournament.rounds.round_order.last %>
+    <%= link_nav(tournament_round_path(tournament, round.next)) do %>
+      <span class="flex flex-row items-center">
+        Next
+        <%= icon("chevron_double_right") %>
+      </span>
+    <% end %>
+  <% end %>
+</nav>

@@ -1,0 +1,7 @@
+<div class="flex flex-col bg-emerald-200 rounded justify-between">
+  <h4 class="text-xl p-2 bg-emerald-300 rounded-t"><%= icon(:hand_thumb_up, entrant.name) %></h4>
+  <% if entrant.image.attached? %>
+    <%= render('tournament/image_pop_up', image: entrant.image) %>
+  <% end %>
+  <cite class="p-2 bg-emerald-300 rounded-b"><%= entrant.creator || "[Unknown]" %></cite>
+</div>

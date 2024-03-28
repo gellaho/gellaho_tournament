@@ -1,0 +1,39 @@
+<nav 
+  class="
+    h-12
+    border-emerald-600
+    border-b-2
+    bg-slate-700
+    text-white
+    w-full
+    w-min-full
+    shadow-md
+  "
+>
+  <div class="flex flex-row gap-3 items-center p-2">
+    <%= button_tag(type: "button", class: "flex md:hidden", "x-on:click" => "mobileNav = !mobileNav") do %>
+      <%= icon(:bars_3) %>
+    <% end %>
+    <%= vite_image_tag('images/favicons/profile.png', class: 'h-8') %>
+    <%= link_to('gellaho', root_path, class: "text-emerald-600 font-medium font-moms-typewriter") %>
+    <div class="hidden md:flex flex-row gap-2 items-center">
+      <%= render("topbar_links") %>
+    </div>
+  </div>
+  <div
+    class="
+      flex
+      md:hidden
+      flex-col
+      p-2
+      gap-2
+      text-white
+      bg-slate-700
+      z-50
+      relative
+    "
+    x-show="mobileNav"
+  >
+    <%= render("topbar_links") %>
+  </div>
+</nav>

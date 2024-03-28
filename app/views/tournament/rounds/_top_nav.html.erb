@@ -1,0 +1,11 @@
+<nav class="flex flex-row gap-1 items-center leading-none">
+  <% if tournament.commentaries.any? %>
+    <%= link_nav(tournament, 'Introduction') %>
+    <%= icon("chevron_double_right") %>
+  <% end %>
+  <% tournament.rounds.each_with_index do |round, i| %>
+    <%= link_nav(tournament_round_path(tournament, round), round.name) %>
+
+    <%= icon("chevron_double_right") unless i == tournament.rounds.length - 1 %>
+  <% end %>
+</nav>

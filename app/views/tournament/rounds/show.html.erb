@@ -1,0 +1,28 @@
+<h1 class="text-4xl"><%= round.name %></h1>
+
+<section class="flex flex-col gap-16">
+  <%= render(round.matches) %>
+
+  <% if round.last? %>
+
+    <article class="flex flex-col gap-4">
+      <h1 class="text-4xl">Your Winners!</h1>
+
+      <div class="flex flex-col">
+        <div class="bg-emerald-100 p-2 rounded-t text-2xl">
+          <%= icon(:trophy, 'First Place') %>
+          <p><%= tournament.first_place.name %><small class="text-slate-600"> - <%= tournament.first_place.creator %></small></p>
+        </div>
+        <div class="p-2 rounded-b border border-slate-500 text-lg">
+          <%= icon(:sparkles, 'Second Place') %>
+          <p><%= tournament.second_place.name %> <small class="text-slate-600"> - <%= tournament.second_place.creator %></small></p>
+        </div>
+      </div>
+    </article>
+
+    <div class="flex flex-col">
+      <h4 class="text-xl"><%= tournament.first_place.name %></h4>
+      <%= render 'tournament/image_pop_up', image: tournament.first_place.image %>
+    </div>
+  <% end %>
+</section>

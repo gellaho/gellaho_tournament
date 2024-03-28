@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-3">
+  <h1 class="text-4xl">New Tournament</h1>
+  <%= simple_form_for :tournament, url: tournaments_path, html: { multipart: true } do |f| %>
+    <%= f.file_field :attachment %>
+    <%= f.button :submit, "Create" %>
+  <% end %>
+</div>
